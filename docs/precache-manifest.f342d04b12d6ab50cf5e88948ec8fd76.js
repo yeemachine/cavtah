@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0a0af9af7cbc6f1a5563a4d31dd66482",
+    "revision": "929d39e679912c44031c6711547d7cd3",
     "url": "/cavtah/index.html"
   },
   {
-    "revision": "82edf79387a9a4eb1433",
+    "revision": "976629ef0a76c06c248a",
     "url": "/cavtah/static/css/main.4575ae16.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cavtah/static/js/2.fc539bf0.chunk.js"
   },
   {
-    "revision": "82edf79387a9a4eb1433",
-    "url": "/cavtah/static/js/main.554014ef.chunk.js"
+    "revision": "976629ef0a76c06c248a",
+    "url": "/cavtah/static/js/main.18b4b7ab.chunk.js"
   },
   {
     "revision": "5e90d92539de1a54c7bf",
