@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/cavtah/static/css/main.4575ae16.chunk.css",
-    "main.js": "/cavtah/static/js/main.032fcaca.chunk.js",
-    "main.js.map": "/cavtah/static/js/main.032fcaca.chunk.js.map",
+    "main.css": "/cavtah/static/css/main.b2b9a74c.chunk.css",
+    "main.js": "/cavtah/static/js/main.4afc86f2.chunk.js",
+    "main.js.map": "/cavtah/static/js/main.4afc86f2.chunk.js.map",
     "runtime~main.js": "/cavtah/static/js/runtime~main.995c6e8e.js",
     "runtime~main.js.map": "/cavtah/static/js/runtime~main.995c6e8e.js.map",
-    "static/js/2.fc539bf0.chunk.js": "/cavtah/static/js/2.fc539bf0.chunk.js",
-    "static/js/2.fc539bf0.chunk.js.map": "/cavtah/static/js/2.fc539bf0.chunk.js.map",
+    "static/js/2.18103c55.chunk.js": "/cavtah/static/js/2.18103c55.chunk.js",
+    "static/js/2.18103c55.chunk.js.map": "/cavtah/static/js/2.18103c55.chunk.js.map",
     "index.html": "/cavtah/index.html",
-    "precache-manifest.df40b3d4af2dbb5d5fb6ee9067941862.js": "/cavtah/precache-manifest.df40b3d4af2dbb5d5fb6ee9067941862.js",
+    "precache-manifest.a83e21181afafc0a8a3516872b2881b4.js": "/cavtah/precache-manifest.a83e21181afafc0a8a3516872b2881b4.js",
     "service-worker.js": "/cavtah/service-worker.js",
-    "static/css/main.4575ae16.chunk.css.map": "/cavtah/static/css/main.4575ae16.chunk.css.map",
-    "static/media/logo.svg": "/cavtah/static/media/logo.002e82a1.svg"
+    "static/css/main.b2b9a74c.chunk.css.map": "/cavtah/static/css/main.b2b9a74c.chunk.css.map"
   }
 }

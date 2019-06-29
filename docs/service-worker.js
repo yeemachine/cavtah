@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cavtah/precache-manifest.df40b3d4af2dbb5d5fb6ee9067941862.js"
+  "/cavtah/precache-manifest.a83e21181afafc0a8a3516872b2881b4.js"
 );
 
 self.addEventListener('message', (event) => {
