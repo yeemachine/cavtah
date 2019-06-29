@@ -16,6 +16,11 @@ Changes that were done to better integrate with Glitch:
 
 ### Deploying to GitHub Pages
 
-If you run `npm run build` using the **Logs > Console**, it will generate a "docs" folder with the production build version of your app. Then click **Advanced Options > Export to GitHub** (in the top left menu with the name of your app).
+If you run `npm run build` using the **Logs > Console**, it will generate a "docs" folder with the production build version of your app. 
+
+Before exporting to Github, comment out `/docs` in `.gitignore`.
+Then click **Advanced Options > Export to GitHub** (in the top left menu with the name of your app).
+
+
  
 Inside GitHub, you can deploy your "docs" folder by going to **Settings > GitHub Pages > Source** and selecting **master branch /docs folder**. Then every time you export from Glitch, click "Open Pull Request" and merge your new changes to master.

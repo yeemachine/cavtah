@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SVG from './svg.js';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to CAVTAH!</h2>
-        </div>
-        <p className="App-intro">
-          The start of something wonderful.
-        </p>
+          <SVG data="https://cdn.glitch.com/c8411ee0-b2bb-481b-8835-6b597f185b9c%2FMerode%20Altarpiece-vector.svg?v=1561795513950"/>      
       </div>
     );
   }

@@ -6,8 +6,8 @@
 # testing
 /coverage
 
-# production
-
+# production: comment out before deploying
+#/docs
 
 # misc
 .DS_Store
