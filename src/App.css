@@ -9,11 +9,11 @@
   font-weight: normal;
 }
 :root{
-  --app-h-margin: 15vw;
+  --app-h-margin: 18vw;
   --accent-red: #EB5757;
   --bg-color: #1A1919;
   --app-v-padding: 80px;
-  --body-text-size: 40px;
+  --body-text-size: 36px;
   --accent-grad: linear-gradient(to right,#23966c, #faaa54, #e23b4a, #db0768, #360670);
 }
 .App {

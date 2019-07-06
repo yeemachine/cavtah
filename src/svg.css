@@ -1,6 +1,6 @@
 .svgContainer{
   position:fixed;
-  top:0;
+  top:var(--mission-h-margin);
   left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*6);
   width:30vw;
   max-height:80vh;
