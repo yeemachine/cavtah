@@ -1,26 +1,29 @@
-@font-face {
-  font-family: 'America Mono';
-  src: url(https://cdn.glitch.com/c8411ee0-b2bb-481b-8835-6b597f185b9c%2FGT-America-Mono-Trial-Bold.otf);
-  font-weight: bold;
-}
 :root {
-  --mission-hmargin: 20px;
-  --mission-vmargin: 80px;
+  --mission-h-margin: 24px;
+  --mission-v-margin: 120px;
 }
 .Mission{
-  width:100%;
+  width:calc(100% - var(--mission-h-margin) * 2);
   min-height:100vh;
+  margin: var(--mission-v-margin) var(--mission-h-margin) var(--mission-v-margin) var(--mission-h-margin);
   grid-column-start: 1;
   grid-column-end: 9;
 }
 .Mission section{
-  margin: var(--mission-vmargin) var(--mission-hmargin) var(--mission-vmargin) var(--mission-hmargin)
+  
 }
 .Mission p{
   text-align:left;
   font-size:40px;
   margin-bottom: 0;
 }
+.Mission sup{
+  font-family:'America Mono';
+  font-weight:bold;
+  font-size:.7em;
+  color:var(--accent-red);
+}
 .Mission span{
-  font-family:'America Mono'
+  font-family:'America Mono';
+  font-weight:bold;
 }

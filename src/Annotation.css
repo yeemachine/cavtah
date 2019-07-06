@@ -1,0 +1,15 @@
+:root{
+}
+.Annotation{
+  position:fixed;
+  bottom:var(--annotation-h-margin);
+  left:calc(85vw + var(--annotation-h-margin));
+  font-family:'America Mono';
+  font-size:10px;
+  text-align:left;
+  width:calc(var(--app-h-margin) - var(--annotation-h-margin) * 2)
+}
+.Annotation .footnote{
+  color:var(--accent-red);
+}
+

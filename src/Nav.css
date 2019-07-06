@@ -1,0 +1,21 @@
+:root{
+  --annotation-h-margin:24px
+}
+.Nav{
+  position:fixed;
+  top:var(--annotation-h-margin);
+  left:calc(85vw + var(--annotation-h-margin));
+  font-family:'America Mono';
+  font-size:12px;
+  text-align:left;
+  width:calc(var(--app-h-margin) - var(--annotation-h-margin) * 2)
+}
+.Nav h3{
+  margin:0 0 16px 0;
+  text-transform:uppercase;
+}
+.Nav ul{
+  list-style:none;
+  padding: 0;
+  margin:0 0 0 0;
+}

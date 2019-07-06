@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Grid from './Grid.js'
+import Nav from './Nav.js'
 import Mission from './Mission.js'
+import Annotation from './Annotation.js'
 import SVG from './svg.js';
 
 class App extends Component {
@@ -9,7 +11,9 @@ class App extends Component {
     return (
       <div className="App">
         <Grid />
-        <Mission />    
+        <Nav />
+        <Mission />  
+        <Annotation />
       </div>
     );
   }
