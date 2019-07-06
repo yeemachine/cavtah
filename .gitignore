@@ -7,7 +7,7 @@
 /coverage
 
 # production: comment out before deploying
-/docs
+#/docs
 
 # misc
 .DS_Store

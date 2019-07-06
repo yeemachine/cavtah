@@ -11,16 +11,27 @@
 :root{
   --app-h-margin: 15vw;
   --accent-red: #EB5757;
-  --global-bg-color: #1A1919
+  --global-bg-color: #1A1919;
+  --app-v-padding: 80px;
+  --body-text-size: 40px;
 }
 .App {
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;  
-  margin-left:var(--app-h-margin);
-  margin-right:var(--app-h-margin);
+  margin:0 var(--app-h-margin) 0 var(--app-h-margin);
+  padding: calc(var(--app-v-padding)*2) 0 var(--app-v-padding) 0;
   color:white;
   font-family:'EB Garamond', serif;
   position:relative;
 }
 
+@media only screen and (max-width: 800px) {
+  :root{
+    --app-h-margin: 16px;
+    --body-text-size: 24px;
+  }
+  .App{
+    padding: var(--app-v-padding) 0 var(--app-v-padding) 0;
+  }
+}

@@ -1,11 +1,10 @@
 :root {
   --mission-h-margin: 24px;
-  --mission-v-margin: 120px;
 }
 .Mission{
   width:calc(100% - var(--mission-h-margin) * 2);
   min-height:100vh;
-  margin: var(--mission-v-margin) var(--mission-h-margin) var(--mission-v-margin) var(--mission-h-margin);
+  margin: 0 var(--mission-h-margin) 0 var(--mission-h-margin);
   grid-column-start: 1;
   grid-column-end: 9;
 }
@@ -14,8 +13,11 @@
 }
 .Mission p{
   text-align:left;
-  font-size:40px;
+  font-size:var(--body-text-size);
   margin-bottom: 0;
+}
+.Mission p:first-child{
+  margin-top:0;
 }
 .Mission sup{
   font-family:'America Mono';
@@ -42,4 +44,10 @@
   height:8%;
   bottom:0;left:0;
   z-index:-1;
+}
+
+@media only screen and (max-width: 800px) {
+  :root{
+   --mission-h-margin: 16px;
+  }
 }

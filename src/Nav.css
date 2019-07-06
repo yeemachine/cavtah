@@ -4,18 +4,32 @@
 .Nav{
   position:fixed;
   top:var(--annotation-h-margin);
-  left:calc(85vw + var(--annotation-h-margin));
+  left:calc(var(--annotation-h-margin));
   font-family:'America Mono';
   font-size:12px;
   text-align:left;
   width:calc(var(--app-h-margin) - var(--annotation-h-margin) * 2)
 }
 .Nav h3{
-  margin:0 0 16px 0;
+  margin:0 0 8px 0;
   text-transform:uppercase;
+  max-width:300px
 }
 .Nav ul{
   list-style:none;
   padding: 0;
   margin:0 0 0 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .Nav{
+  position:relative;
+  left:0;
+  top:auto;
+  width:calc(100% - var(--mission-h-margin) * 2);
+  grid-column-start: 1;
+  grid-column-end: 6;
+  margin: 0 var(--mission-h-margin) calc(var(--mission-h-margin) * 2) var(--mission-h-margin);
+  }
+  
 }
