@@ -1,31 +1,25 @@
+@font-face {
+  font-family: 'America Mono';
+  src: url(https://cdn.glitch.com/c8411ee0-b2bb-481b-8835-6b597f185b9c%2FGT-America-Mono-Trial-Bold.otf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'America Mono';
+  src: url(https://cdn.glitch.com/c8411ee0-b2bb-481b-8835-6b597f185b9c%2FGT-America-Mono-Trial-Regular.otf);
+  font-weight: normal;
+}
+:root{
+  --app-h-margin: 15vw;
+  --accent-red: #EB5757;
+}
 .App {
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;  
-  margin-left:15vw;
-  margin-right:15vw;
+  margin-left:var(--app-h-margin);
+  margin-right:var(--app-h-margin);
   color:white;
   font-family:'EB Garamond', serif;
   position:relative;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
