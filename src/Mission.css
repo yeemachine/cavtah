@@ -1,0 +1,25 @@
+@font-face {
+  font-family: AmericaMono;
+  src: url(https://cdn.glitch.com/c8411ee0-b2bb-481b-8835-6b597f185b9c%2FGT-America-Mono-Trial-Bold.otf);
+  font-weight: bold;
+}
+:root {
+  --mission-hmargin: 20px;
+  --mission-vmargin: 80px;
+}
+.Mission{
+  width:100%;
+  min-height:100vh;
+  grid-column-start: 1;
+  grid-column-end: 9;
+}
+.Mission section{
+  margin: var(--mission-vmargin) var(--mission-hmargin) var(--mission-vmargin) var(--mission-hmargin)
+}
+.Mission p{
+  text-align:left;
+  font-size:40px;
+}
+.Mission span{
+  font-family:AmericaMono
+}
