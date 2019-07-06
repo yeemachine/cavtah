@@ -30,6 +30,7 @@
   :root{
     --app-h-margin: 16px;
     --body-text-size: 24px;
+    --app-v-padding: 40px;
   }
   .App{
     padding: var(--app-v-padding) 0 var(--app-v-padding) 0;
