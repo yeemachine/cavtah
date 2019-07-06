@@ -7,6 +7,7 @@
   margin: 0 var(--mission-h-margin) 0 var(--mission-h-margin);
   grid-column-start: 1;
   grid-column-end: 9;
+  z-index:1
 }
 .Mission section{
   
@@ -34,9 +35,11 @@
   position: relative;
   color: white;
   background: var(--bg-color);
-/*   mix-blend-mode: screen; */
 }
-.Mission .Artist::before{
+.Mission .Artist:hover{
+  cursor:pointer;
+}
+.Mission .Artist:before{
    content: '';
     display: block;
     position: absolute;
@@ -46,8 +49,14 @@
     background: var(--accent-red);
     pointer-events: none;
     mix-blend-mode: darken;
+    transition:height .5s;
 }
-.Mission .Artist::after{
+.Mission .Artist:hover:before{
+  height:100%;
+  transition:height .5s;
+}
+
+.Mission .Artist:after{
    content: '';
     display: block;
     position: absolute;
