@@ -11,9 +11,10 @@
 :root{
   --app-h-margin: 15vw;
   --accent-red: #EB5757;
-  --global-bg-color: #1A1919;
+  --bg-color: #1A1919;
   --app-v-padding: 80px;
   --body-text-size: 40px;
+  --accent-grad: linear-gradient(to right,#23966c, #faaa54, #e23b4a, #db0768, #360670);
 }
 .App {
   text-align: center;
