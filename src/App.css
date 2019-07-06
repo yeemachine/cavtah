@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;  
+  margin-left:15vw;
+  margin-right:15vw;
+  color:white;
+  font-family:garamond;
+  position:relative;
 }
 
 .App-logo {
