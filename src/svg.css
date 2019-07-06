@@ -20,12 +20,12 @@
 }
 svg image{
   opacity:0;
-  animation: appear 3s linear 3s;
+  animation: appear 1s linear 1s;
   animation-fill-mode:forwards
 }
 path,polygon,polyline{
   stroke:var(--accent-red) !important;
-  animation: draw 4s cubic-bezier(.42,0,1,1);
+  animation: draw 3s cubic-bezier(.42,0,1,1);
   stroke-dasharray:1000;
   animation-fill-mode:forwards
 }
@@ -36,6 +36,7 @@ path,polygon,polyline{
   }
   80%{
     stroke-dashoffset:0;
+    opacity:1;
   }
   100% { 
     stroke-dashoffset:0;
