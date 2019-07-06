@@ -1,5 +1,3 @@
-:root{
-}
 .Annotation{
   position:fixed;
   bottom:var(--annotation-h-margin);
@@ -11,5 +9,19 @@
 }
 .Annotation .footnote{
   color:var(--accent-red);
+}
+
+@media only screen and (max-width: 800px) {
+  .Annotation{
+  position:relative;
+  left:0;
+  bottom:auto;
+  width:calc(100% - var(--mission-h-margin) * 2);
+  grid-column-start: 1;
+  grid-column-end: 9;
+  margin: var(--mission-h-margin) var(--mission-h-margin) 0 var(--mission-h-margin);
+  padding-top:calc(var(--mission-h-margin));
+  border-top:solid 1px white;
+  }
 }
 
