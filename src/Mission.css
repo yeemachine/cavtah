@@ -1,5 +1,5 @@
 @font-face {
-  font-family: AmericaMono;
+  font-family: 'America Mono';
   src: url(https://cdn.glitch.com/c8411ee0-b2bb-481b-8835-6b597f185b9c%2FGT-America-Mono-Trial-Bold.otf);
   font-weight: bold;
 }
@@ -19,7 +19,8 @@
 .Mission p{
   text-align:left;
   font-size:40px;
+  margin-bottom: 0;
 }
 .Mission span{
-  font-family:AmericaMono
+  font-family:'America Mono'
 }
