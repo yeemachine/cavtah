@@ -11,6 +11,7 @@
 :root{
   --app-h-margin: 15vw;
   --accent-red: #EB5757;
+  --global-bg-color: #1A1919
 }
 .App {
   text-align: center;
