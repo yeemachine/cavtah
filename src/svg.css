@@ -1,10 +1,15 @@
+.column_5{
+  --column-multiplier:6
+}
 .svgContainer{
   position:fixed;
-  top:var(--mission-h-margin);
-  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*6);
   width:30vw;
   max-height:80vh;
-  z-index:0
+  z-index:0;
+  display:none;
+}
+.svgContainer.show{
+  display:block;
 }
 .svgContainer:hover{
   z-index:2;
@@ -51,4 +56,61 @@ path,polygon,polyline{
   100% { 
     opacity:0.4;
   }
+}
+
+.svgContainer.column_1.left{
+  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*1);
+}
+.svgContainer.column_2.left{
+  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*2);
+}
+.svgContainer.column_3.left{
+  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*3);
+}
+.svgContainer.column_4.left{
+  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*4);
+}
+.svgContainer.column_5.left{
+  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*5);
+}
+.svgContainer.column_6.left{
+  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*6);
+}
+.svgContainer.column_7.left{
+  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*7);
+}
+.svgContainer.column_8.left{
+  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*8);
+}
+
+.svgContainer.column_1.right{
+  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*1);
+}
+.svgContainer.column_2.right{
+  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*2);
+}
+.svgContainer.column_3.right{
+  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*3);
+}
+.svgContainer.column_4.right{
+  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*4);
+}
+.svgContainer.column_5.right{
+  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*5);
+}
+.svgContainer.column_6.right{
+  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*6);
+}
+.svgContainer.column_7.right{
+  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*7);
+}
+.svgContainer.column_8.right{
+  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*8);
+}
+
+.svgContainer.top{
+  top:var(--mission-h-margin);
+}
+.svgContainer.bottom{
+  bottom:var(--mission-h-margin);
 }
