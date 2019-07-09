@@ -9,10 +9,6 @@ class Grid extends Component {
         <div className="Grid-Line"></div>
         <div className="Grid-Line"></div>
         <div className="Grid-Line"></div>
-        <div className="Grid-Line"></div>
-        <div className="Grid-Line"></div>
-        <div className="Grid-Line"></div>
-        <div className="Grid-Line"></div>
       </div>
     );
   }

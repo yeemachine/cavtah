@@ -6,52 +6,27 @@ class SVG extends Component {
   constructor(props){
     super()
     this.state = {
-      style:{
-        align:props.data.align,
-        startColumn:props.data.startColumn
-      },
-      svgData: ''
     };
-    console.log(this.state)
   }
   componentDidMount(){
     //test passing state to parent
-    setTimeout(()=>{this.props.callback('campin');},5000)
+    console.log('Mounted')
   }
-  loadSVG(url){
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET",this.props.data.url,true);
-    xhr.overrideMimeType("image/svg+xml");
-    xhr.onload = (e) => {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-            return this.setState({
-              style:{
-                align:this.props.data.align,
-                startColumn:this.props.data.startColumn
-              },
-              svgData: xhr.responseText 
-            },this.show());   
-        } else {
-          console.error(xhr.statusText);
-        }
-      }
-    };
-    xhr.onerror = function (e) {
-      console.error(xhr.statusText);
-    };
-    xhr.send(null); 
-  }
-  show(){
-    let component = ReactDOM.findDOMNode(this)
-    component.classList.add('show')
+  componentDidUpdate(oldProps) {
+    let DOM_Node = ReactDOM.findDOMNode(this)
+    if(oldProps.data){
+      console.log(oldProps.data,this.props.data,this)
+    }
   }
   render() {
-    this.loadSVG()
-    return (
-      <div dangerouslySetInnerHTML={{__html: this.state.svgData}} className={['svgContainer',('column_'+this.state.style.startColumn),this.state.style.align].join(' ')}>
-      </div>   
-    );
+    if(this.props.data){
+      return (
+        <div dangerouslySetInnerHTML={{__html: this.props.data.data}} className={['svgContainer show'].join(' ')}>
+        </div>   
+      );
+    }else{
+      return null
+    }
   }
 }
 

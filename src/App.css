@@ -20,8 +20,8 @@
 
 @media only screen and (max-width: 800px) {
   :root{
-    --app-h-margin: 16px;
-    --body-text-size: 24px;
+    --app-h-margin: 0;
+    --body-text-size: 20px;
     --app-v-padding: 40px;
   }
   .App{
