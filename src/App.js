@@ -13,8 +13,9 @@ class App extends Component {
     super();
     this.data = DATA
     this.state = {
-     currentArtist : 'rembrandt',
-      svgLoaded:false
+      currentArtist : 'rembrandt',
+      svgLoaded:false,
+      gallery:false,
     }
     this.svgs = this.preloadSVG()
     this.callback = (stateObj) => {
@@ -62,7 +63,7 @@ class App extends Component {
         <Grid />
         <Nav callback={this.callback} data={this.data.nav}/>
         <Mission callback={this.callback} data={this.data.mission}/>  
-        <SVG callback={this.callback} data={this.svgs[this.state.currentArtist]}/>
+        <SVG callback={this.callback} data={this.svgs[this.state.currentArtist]} gallery={this.state.gallery}/>
         <Annotation callback={this.callback} data={this.data.annotation}/>
       </div>
     );

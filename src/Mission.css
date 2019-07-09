@@ -7,7 +7,8 @@
   margin: 0 var(--mission-h-margin) 0 var(--mission-h-margin);
   grid-column-start: 1;
   grid-column-end: 9;
-  z-index:1
+  z-index:1;
+  
 }
 .Mission section{
   
@@ -16,7 +17,9 @@
   text-align:left;
   font-size:var(--body-text-size);
   margin-bottom: 0;
+  margin: calc(var(--mission-h-margin) * 4) 0  var(--mission-h-margin) 0;
   line-height:1.5;
+  background:var(--bg-color)
 }
 .Mission p:first-child{
   margin-top:0;
