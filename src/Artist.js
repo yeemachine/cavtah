@@ -18,12 +18,18 @@ class Artist extends Component {
       }
       this.props.callback(stateObj)
     }
+    this.click = () => {
+       let stateObj = {
+        gallery:true
+      }
+      this.props.callback(stateObj)
+    }
   }
   componentDidMount(){
   }
   render() {
     return (
-      <span className="Artist" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} data-text={this.props.name}>{this.props.name}</span>
+      <span className="Artist" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onClick={this.click} data-text={this.props.name}>{this.props.name}</span>
     );
   }
 }
