@@ -5,9 +5,9 @@ class Nav extends Component {
   render() {
     return (
       <div className="Nav">  
-       <h3>Center For Advancement Of Visual Technologies In Art History</h3>
+       <h3>{this.props.data.title}</h3>
         <ul>
-          <li>Benjamin Binstock</li>
+          {this.props.data.people}
         </ul>
       </div>
     );
