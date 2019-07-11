@@ -41,18 +41,18 @@
 
 svg image{
   opacity:0;
-  animation: appear 2.5s cubic-bezier(.42,0,1,1) 0s;
+  animation: appear 1.5s cubic-bezier(.42,0,1,1);
   animation-fill-mode:forwards;
 }
 path,polygon,polyline{
   stroke:var(--accent-red) !important;
-  animation: draw 2.5s cubic-bezier(.42,0,1,1);
+  animation: draw 2s cubic-bezier(.42,0,1,1);
   stroke-dasharray:1000;
   animation-fill-mode:forwards
 }
 .gallery path,.gallery polygon,.gallery polyline{
-  animation: draw2 3.5s cubic-bezier(.42,0,1,1);
-  animation-fill-mode:forwards
+/*   animation: draw2 3.5s cubic-bezier(.42,0,1,1);
+  animation-fill-mode:forwards */
 }
 
 
@@ -87,7 +87,7 @@ path,polygon,polyline{
     opacity:0
   }
   100% { 
-    opacity:0.1;
+    opacity:0.15;
   }
 }
 

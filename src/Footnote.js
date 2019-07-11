@@ -1,14 +1,30 @@
 import React, { Component } from 'react';
 import './Artist.css';
+import VisibilitySensor from 'react-visibility-sensor'
+
 
 class Footnote extends Component {
-  constructor(){
-    super()
-    this.state = {}
+  constructor(props){
+    super(props)
+    this.state = {
+      annotationVisible:false
+    }
+    this.visibilityChange = this.visibilityChange.bind(this)
+  }
+  visibilityChange(isVisible){
+    let stateObj = {
+      annotationVisible:isVisible
+    }
+    this.setState(stateObj,()=>{
+      this.props.callback(stateObj)
+    })
   }
   render() {
+    
     return (
-      <sup className="Footnote">{this.props.number}</sup>
+      <VisibilitySensor onChange={this.visibilityChange}>
+      <sup className={(this.state.annotationVisible) ? "Footnote show" : "Footnote"}>{this.props.number}</sup>
+      </VisibilitySensor>
     );
   }
 }

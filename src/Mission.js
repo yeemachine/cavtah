@@ -10,11 +10,12 @@ class Mission extends Component {
     this.state = {
       content:""
     }
-    this.callback = (stateObj) => {
-      this.setState(stateObj,()=>{
+    this.callback = this.callback.bind(this)
+  }
+  callback(stateObj){
+    this.setState(stateObj,()=>{
         this.props.callback(stateObj)
-      })
-    }
+    })
   }
   processData(){
     let processedArray = []
