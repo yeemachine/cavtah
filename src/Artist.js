@@ -5,25 +5,28 @@ class Artist extends Component {
   constructor(){
     super()
     this.state = {}
-    this.mouseEnter = ()=>{
-      let stateObj = {
+    this.mouseEnter = this.mouseEnter.bind(this)
+    this.mouseLeave = this.mouseLeave.bind(this)
+    this.click = this.click.bind(this)
+  }
+  mouseEnter(){
+    let stateObj = {
         currentArtist:this.props.name.replace(/ /g,"_").toLowerCase(),
         carousel:false
       }
-      this.props.callback(stateObj)
-    }
-    this.mouseLeave = ()=>{
-      let stateObj = {
+    this.props.callback(stateObj)
+  }
+  mouseLeave(){
+    let stateObj = {
         carousel:true
       }
-      this.props.callback(stateObj)
-    }
-    this.click = () => {
-       let stateObj = {
+    this.props.callback(stateObj)
+  }
+  click(){
+    let stateObj = {
         gallery:true
       }
-      this.props.callback(stateObj)
-    }
+    this.props.callback(stateObj)
   }
   componentDidMount(){
   }

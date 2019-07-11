@@ -16,13 +16,15 @@ class App extends Component {
       currentArtist : 'rembrandt',
       svgLoaded:false,
       gallery:false,
+      annotationVisible:false
     }
     this.svgs = this.preloadSVG()
-    this.callback = (stateObj) => {
-      this.setState(stateObj,()=>{
-        console.log(this.state)
-      })
-    }
+    this.callback = this.callback.bind(this)
+  }
+  callback(stateObj){
+    this.setState(stateObj,()=>{
+      console.log(this.state)
+    })
   }
   preloadSVG(){
     let xhrObj = {}
@@ -64,7 +66,7 @@ class App extends Component {
         <Nav callback={this.callback} data={this.data.nav}/>
         <Mission callback={this.callback} data={this.data.mission}/>  
         <SVG callback={this.callback} data={this.svgs[this.state.currentArtist]} gallery={this.state.gallery}/>
-        <Annotation callback={this.callback} data={this.data.annotation}/>
+        <Annotation callback={this.callback} data={this.data.annotation} isVisible={this.state.annotationVisible}/>
       </div>
     );
   }

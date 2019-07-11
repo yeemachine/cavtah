@@ -7,21 +7,21 @@ class SVG extends Component {
     super()
     this.state = {
     };
-    this.click = () => {
-       let stateObj = {
+    this.click = this.click.bind(this)
+  }
+  click(){
+    let stateObj = {
         gallery:false
       }
-      this.props.callback(stateObj)
-    }
+    this.props.callback(stateObj)
   }
   componentDidMount(){
     //test passing state to parent
-    console.log('Mounted')
   }
   componentDidUpdate(oldProps) {
     let DOM_Node = ReactDOM.findDOMNode(this)
     if(oldProps.data){
-      console.log(oldProps.data,this.props.data)
+      // console.log(oldProps.data,this.props.data)
     }
   }
   
