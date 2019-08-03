@@ -9,50 +9,112 @@
   z-index:0;
   pointer-events:none;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
   z-index:1;
   transition: all .25s
 /*   display:none; */
 }
+.svgContainer:hover{
+  cursor:pointer;
+}
+.svgContainer div{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.svgContainer p{
+  max-width:500px;
+  position:absolute;
+  opacity:0; 
+  font-family:'America Mono';
+}
+
+
 .svgContainer.gallery{
   pointer-events:all;
-  background:rgba(0,0,0,0.9)
 }
-.svgContainer svg{
-  min-width:100vw;
-  min-height:100vh;
+.svgContainer.gallery:hover{
+  cursor: url(https://cdn.glitch.com/c8411ee0-b2bb-481b-8835-6b597f185b9c%2F1f22d9d6-e66a-48a3-a949-61254002d860_x-icon.svg), pointer;
+}
+.svgContainer .mobileProg{
+  width:100px;
+  height:100px;
+  position:absolute;
+  right:var(--mission-h-margin);
+  bottom:var(--mission-h-margin);
+  opacity:0;
+  pointer-events:none;
+}
+
+.svgContainer .mobileProg circle:nth-child(1){
+  stroke:white;
+}
+
+.svgContainer .mobileProg circle:nth-child(2){
+  stroke:var(--accent-red);
+  stroke-dasharray:1000;
+  stroke-dashoffset:1000;
+  transform-origin:center;
+  transform:rotate(-90deg);
+  animtion:none;
+}
+
+.svgContainer.animation .mobileProg circle:nth-child(2){
+  animation: circleLoader 4s linear;
+  animation-fill-mode:forwards;
+}
+
+.svgContainer div svg{
+  width:100%;
+  height:auto;
+/*   min-height:100%; */
+  min-width:100%;
+}
+.svgContainer.gallery div{
+  height:80vh;
+  width:100%;
+  transition: all .25s;
+}
+.svgContainer.gallery p{
+  position:relative;
+  opacity:1; 
+  transition: opacity .25s .25s;
+}
+.svgContainer.gallery div svg{
+  height:100%;
+  width:auto;
+  min-width:auto;
   transition: all .25s
 }
-.svgContainer.gallery svg{
-  min-width: auto;
-  min-height: 80vh;
-  height:80vh;
-  width:auto;
-}
-.svgContainer.gallery svg image{
-  opacity:1;
-  animation:none;
-  animation-fill-mode:none;
-/*   opacity:0;
-  animation: appear2 1s cubic-bezier(.42,0,1,1) 1s;
-  animation-fill-mode:forwards; */
+.svgContainer.gallery div svg image{
+  opacity:0;
+  animation: appear2 .5s cubic-bezier(.42,0,1,1) 1s;
+  animation-fill-mode:forwards;
 }
 
 svg image{
   opacity:0;
-  animation: appear 1.5s cubic-bezier(.42,0,1,1);
+  animation: appear .5s cubic-bezier(.42,0,1,1);
   animation-fill-mode:forwards;
 }
 path,polygon,polyline{
   stroke:var(--accent-red) !important;
-  animation: draw 2s cubic-bezier(.42,0,1,1);
   stroke-dasharray:1000;
-  animation-fill-mode:forwards
+  stroke-dashoffset:1000;
+
 }
 .gallery path,.gallery polygon,.gallery polyline{
-/*   animation: draw2 3.5s cubic-bezier(.42,0,1,1);
+/*   animation: draw2 2s cubic-bezier(.42,0,1,1);
   animation-fill-mode:forwards */
+  stroke-dashoffset:0;
+  opacity:0;
+  transition: 
+    stroke-dashoffset 2s cubic-bezier(.42,0,1,1) 0s,
+    opacity 0.5s linear 1.8s;
 }
 
 
@@ -87,7 +149,7 @@ path,polygon,polyline{
     opacity:0
   }
   100% { 
-    opacity:0.15;
+    opacity:0.05;
   }
 }
 
@@ -100,59 +162,62 @@ path,polygon,polyline{
   }
 }
 
-.svgContainer.column_1.left{
-  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*1);
-}
-.svgContainer.column_2.left{
-  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*2);
-}
-.svgContainer.column_3.left{
-  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*3);
-}
-.svgContainer.column_4.left{
-  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*4);
-}
-.svgContainer.column_5.left{
-  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*5);
-}
-.svgContainer.column_6.left{
-  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*6);
-}
-.svgContainer.column_7.left{
-  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*7);
-}
-.svgContainer.column_8.left{
-  left:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*8);
+@keyframes circleLoader {
+  0%{
+    stroke-dashoffset:1000;
+  }
+  100%{
+    stroke-dashoffset:690;
+  }
 }
 
-.svgContainer.column_1.right{
-  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*1);
-}
-.svgContainer.column_2.right{
-  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*2);
-}
-.svgContainer.column_3.right{
-  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*3);
-}
-.svgContainer.column_4.right{
-  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*4);
-}
-.svgContainer.column_5.right{
-  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*5);
-}
-.svgContainer.column_6.right{
-  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*6);
-}
-.svgContainer.column_7.right{
-  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*7);
-}
-.svgContainer.column_8.right{
-  right:calc(var(--app-h-margin) + (100vw - 2 * var(--app-h-margin))/8*8);
-}
-
-.svgContainer.top{
-  top:var(--mission-h-margin);
-}
-.svgContainer.bottom{
-  bottom:var(--mission-h-margin);
+@media only screen and (max-width: 800px) {
+  div svg image{
+  opacity:1;
+  animation: none
+  }
+  .svgContainer{
+    pointer-events:all;
+  }
+  .svgContainer.gallery div svg image{
+  opacity:1;
+  animation: none
+  }
+  
+  .svgContainer{
+    width:100px;
+    height:100px;
+    top:auto;left:auto;
+    padding:var(--mission-h-margin);
+    bottom: 0;
+    right: 0;
+  }
+  
+  .svgContainer.gallery{
+    width:calc(100vw - var(--mission-h-margin)*2);
+    height:calc(100vh - var(--mission-h-margin)*2);
+  }
+  .svgContainer div{
+  width:100px;
+  height:100px;
+  overflow:hidden;
+  border-radius:50%;
+  }
+  .svgContainer.gallery div{
+  border-radius:0;
+  height:auto;
+  }
+  .svgContainer.gallery div svg{
+    width:100%;
+    height:auto;
+  }
+  .svgContainer .mobileProg{
+  opacity:1;
+  transition:all .25s;
+  transition-delay:.25s
+  }
+  .svgContainer.gallery .mobileProg{
+  opacity:0;
+  transition:opacity 0s;
+  }
 }
