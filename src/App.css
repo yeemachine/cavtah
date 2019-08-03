@@ -3,7 +3,7 @@
   --app-h-margin: 18vw;
   --accent-red: #EB5757;
   --bg-color: #1A1919;
-  --app-v-padding: 60vh;
+  --app-v-padding: 20vh;
   --body-text-size: calc(20px + 1vw);
   --accent-grad: linear-gradient(to right,#23966c, #faaa54, #e23b4a, #db0768, #360670);
 }
@@ -14,7 +14,8 @@
   margin:0 var(--app-h-margin) 0 var(--app-h-margin);
   padding: var(--app-v-padding) 0 var(--app-v-padding) 0;
   color:white;
-  font-family:'EB Garamond', serif;
+  font-family:'Cormorant Garamond', serif;
+  font-weight:100;
   position:relative;
 }
 

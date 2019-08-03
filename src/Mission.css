@@ -3,32 +3,80 @@
 }
 .Mission{
   width:calc(100% - var(--mission-h-margin) * 2);
-  min-height:100vh;
+/*   min-height:100vh; */
   margin: 0 var(--mission-h-margin) 0 var(--mission-h-margin);
+  padding: var(--mission-h-margin) 0 0 0;
   grid-column-start: 1;
   grid-column-end: 9;
   z-index:1;
-  
+  position:relative;
+  background:var(--bg-color);
 }
 .Mission section{
   
 }
-.Mission p{
+
+.Mission div{
   text-align:left;
   font-size:var(--body-text-size);
   margin-bottom: 0;
-  margin: calc(var(--mission-h-margin) * 4) 0  var(--mission-h-margin) 0;
+  margin: calc(var(--mission-h-margin) * 2) 0  var(--mission-h-margin) 0;
   line-height:1.5;
-  background:var(--bg-color)
+  position:relative;
 }
-.Mission p:first-child{
+.Mission h3{
+  font-family:'America Mono';
+  margin:0;
+  padding:0;
+  font-weight:700;
+  font-size:2em;
+  color:var(--bg-color);
+  width:max-content;
+  position:relative;
+  padding: var(--mission-h-margin) .1em 0 .1em;
+  margin-bottom: calc(var(--mission-h-margin) * -1);
+  line-height:1;
+  transform-origin:center;
+  transform:rotate(-0.5deg);
+  display:inline-block;
+}
+.Mission h3:before{
+  content:'';
+  width:0;
+  height:calc(100% - var(--mission-h-margin));
+  background:white;
+  position:absolute;
+  top:var(--mission-h-margin);
+  left:0;
+  z-index:-1;
+  transition:width 0.75s 0.25s;
+
+}
+.Mission h3.show:before{
+  width:100%;
+}
+.gallery .Mission div{
+  color:rgba(255,255,255,0.1);
+  transition:color 0.5s;
+}
+
+.Mission div:first-child{
   margin-top:0;
 }
+
 .Mission sup{
   font-family:'America Mono';
   font-weight:bold;
   font-size:.7em;
   color:var(--accent-red);
+}
+.gallery .Mission sup{
+  opacity:0.1;
+  transition:opacity 0.5s;
+}
+.gallery .Mission h3:before{
+  opacity:0.1;
+  transition:all 0.5s;
 }
 .Mission span{
 }
@@ -36,5 +84,8 @@
 @media only screen and (max-width: 800px) {
   :root{
    --mission-h-margin: 16px;
+  }
+  .Mission h3{
+    font-size:1.8em
   }
 }

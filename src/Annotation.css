@@ -1,23 +1,49 @@
+.gallery .Annotation{
+  opacity:0.1
+}
 .Annotation{
   position:fixed;
   bottom:var(--annotation-h-margin);
   left:calc(100vw - var(--app-h-margin) + var(--annotation-h-margin));
   font-family:'America Mono';
-  font-size:10px;
   text-align:left;
   width:calc(var(--app-h-margin) - var(--annotation-h-margin) * 2);
-  height:auto;
-/*   max-height:0; */
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  height: calc(100vh - var(--annotation-h-margin) * 2);
   overflow:hidden;
-  opacity:0;
-  transition:all 0.25s linear;
 }
-.Annotation.show{
+
+.Annotation p{
+    font-size: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    color:var(--accent-red);
+    /* fade out, then shrink */
+    transition: opacity .25s,
+                color .25s,
+                font-size .5s .25s,
+                margin .5s .25s,
+                padding .5s .25s;
+}
+
+.Annotation p.show{
+  font-size:10px;
+  padding-top:10px;
   opacity:1;
-/*   max-height:500px; */
+  color:white;
+  transition: font-size .25s,
+              margin .25s,
+              padding .25s,
+              opacity .5s .25s,
+              color .5s .75s;
 }
+
 .Annotation .footnote{
   color:var(--accent-red);
+  margin-right:5px
 }
 
 @media only screen and (max-width: 800px) {
@@ -31,6 +57,13 @@
   margin: calc(var(--mission-h-margin) * 2) var(--mission-h-margin) 0 var(--mission-h-margin);
   padding-top:calc(var(--mission-h-margin));
   border-top:solid 1px white;
+  height:auto;
+  }
+  .Annotation p{
+  font-size:10px;
+  padding-top:10px;
+  opacity:1;
+  color:white;
   }
 }
 

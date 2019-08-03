@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Mission.css';
 import Artist from './Artist.js';
 import Footnote from './Footnote.js';
+import Header3 from './Header3.js';
 
 
 class Mission extends Component {
@@ -19,36 +20,60 @@ class Mission extends Component {
   }
   processData(){
     let processedArray = []
-    let artistCount = 0
-    let footCount = 0
+    let uniqueKey = 0
     this.props.data.forEach((e,i)=>{
       let filteredArray = e.split(/\{\{|\}\}/g); 
       let children = []
       filteredArray.forEach((f,j)=>{
         let child
         if(f.substring(0,2) === 'A:'){
-          artistCount += 1
-          child = <Artist key={'a'+artistCount} name={f.substring(2)} callback={this.callback}/>
+          let artistName = f.substring(2)
+          child = <Artist 
+                    key={'A'+uniqueKey} 
+                    name={artistName} 
+                    isMobile={this.props.isMobile}
+                    callback={this.callback} 
+                    currentArtist= {this.props.currentArtist}
+                    selected={this.props.selected}
+                  />
         }else if(f.substring(0,2) === 'F:'){
-          footCount += 1
-          child = <Footnote key={'f'+footCount} number={f.substring(2)} callback={this.callback}/>
-        }else{
+          child = <Footnote 
+                    key={'F'+uniqueKey} 
+                    number={f.substring(2)} 
+                    callback={this.callback}
+                    annotations={this.props.annotations}
+                  />
+        }else if(f.substring(0,2) === 'I:'){
+          child = <i key={'I'+uniqueKey}>{f.substring(2)}</i>
+        }
+        else if(f.substring(0,2) === 'B:'){
+          child = <b key={'B'+uniqueKey}>{f.substring(2)}</b>
+        }else if(f.substring(0,2) === 'H:'){
+          child = <Header3 
+                    key={'H'+uniqueKey} 
+                    text={f.substring(2)} 
+                    callback={this.callback}
+                  />
+        }
+        else{
           child = f
         }
+        uniqueKey += 1
         children.push(child)
       })
-      processedArray.push(<p key={'p'+i}>{children}</p>)
+      processedArray.push(<div key={'p'+i}>{children}</div>)
     })
-    return this.setState({content:processedArray})
+    return(processedArray)
+    // this.setState({content:processedArray})
   }
   componentDidMount(){
-    this.processData()
+    // this.processData()
   }
-  render() {
+  render(){
     return (
-      <div className="Mission">
+      <div className={"Mission"}>
         <section>
-          {this.state.content}
+          {this.processData()}
         </section>       
      </div>
     );

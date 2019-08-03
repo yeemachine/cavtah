@@ -1,49 +1,67 @@
 .Artist{
   font-family:'America Mono';
   font-weight:bold;
+  font-size:.85em;
   display: inline-block;
   position: relative;
-  color: white;
-  background: var(--bg-color);
-/*   background-image: linear-gradient(to bottom, white 50%, var(--accent-red) 50%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  transition:background-image .5s; */
-}
-/* .Artist:hover{
-  background-image: linear-gradient(to bottom, white 0%, var(--accent-red) 100%);
-} */
-.Artist.selected:before{
-  transition:height 15s;
-  height:80%;
-}
-.Artist:hover{
-  cursor:pointer;
-}
-.Artist:before{
-   content: '';
-    display: block;
-    position: absolute;
-    width:100%;
-    height:10%;
-    bottom:0;
-    background: var(--accent-red);
-    pointer-events: none;
-    mix-blend-mode: darken;
-    transition:height .25s;
-}
-.Artist:hover:before,.Mission .Artist.selected:hover:before{
-  height:80%;
 }
 
+.Artist:hover{
+  cursor:pointer;
+  color:var(--accent-red);
+}
 .Artist:after{
    content: '';
     display: block;
     position: absolute;
     width:100%;
-    height:8%;
+    height:100%;
     bottom:0;
     background: var(--accent-red);
     pointer-events: none;
+    mix-blend-mode: darken;
+    transform:scale(0, 1);
+    transform-origin:left;
+    transition:transform .5s;
+}
+
+.Artist:hover:before,.Mission .Artist.selected:hover:before{
+}
+
+.Artist:before{
+   content: '';
+    display: block;
+    position: absolute;
+    width:100%;
+    height:8%;
+    bottom:4%;
+    background: white;
+    z-index:-1
+}
+.gallery .Artist:before{
+  opacity:0.1
+}
+
+.Artist.currentArtist:after{
+  transform:scale(1, 1);
+  transition:transform 4s linear;
+}
+
+.gallery .Artist.selected{
+  color:var(--accent-red);
+}
+.gallery .Artist.selected:after{
+  transform:scale(0, 1);
+}
+.gallery .Artist:before{
+  opacity:0.05
+}
+
+@keyframes fill {
+  0% { 
+    width:00%
+  }
+  100% { 
+    width:100%;
+  }
 }
