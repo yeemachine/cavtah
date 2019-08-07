@@ -29,7 +29,6 @@
   margin:0;
   padding:0;
   font-weight:700;
-  font-size:2em;
   color:var(--bg-color);
   width:max-content;
   position:relative;
@@ -84,8 +83,5 @@
 @media only screen and (max-width: 800px) {
   :root{
    --mission-h-margin: 16px;
-  }
-  .Mission h3{
-    font-size:1.8em
   }
 }

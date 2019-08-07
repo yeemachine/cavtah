@@ -92,7 +92,7 @@
 }
 .svgContainer.gallery div svg image{
   opacity:0;
-  animation: appear2 .5s cubic-bezier(.42,0,1,1) 1s;
+  animation: appear2 1.5s cubic-bezier(.42,0,1,1) 0s;
   animation-fill-mode:forwards;
 }
 
@@ -101,20 +101,20 @@ svg image{
   animation: appear .5s cubic-bezier(.42,0,1,1);
   animation-fill-mode:forwards;
 }
-path,polygon,polyline{
+path,polygon,polyline,rect,ellipse{
   stroke:var(--accent-red) !important;
-  stroke-dasharray:1000;
-  stroke-dashoffset:1000;
+  stroke-dasharray:4200;
+  stroke-dashoffset:4200;
 
 }
-.gallery path,.gallery polygon,.gallery polyline{
+.gallery path,.gallery polygon,.gallery polyline,.gallery rect,.gallery ellipse{
 /*   animation: draw2 2s cubic-bezier(.42,0,1,1);
   animation-fill-mode:forwards */
   stroke-dashoffset:0;
   opacity:0;
   transition: 
     stroke-dashoffset 2s cubic-bezier(.42,0,1,1) 0s,
-    opacity 0.5s linear 1.8s;
+    opacity 0.5s linear 2.4s;
 }
 
 
