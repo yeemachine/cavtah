@@ -3,7 +3,8 @@ const DATA = {
   "nav": {
     "title":'Center for Advancement of Visual Technologies in Art History',
     "people":[
-      'Benjamin Binstock'
+      'Benjamin Binstock',
+      'Cathy'
     ]
     },
   "mission": //Syntax for Footnote/Art inline components is {{A:Name}}, {{F:#}}, {{I:Italic Text}}, {{B:Bold Text}}
