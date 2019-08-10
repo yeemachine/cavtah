@@ -18,14 +18,14 @@ class App extends Component {
       svgLoaded:false,
       gallery:false,
       carousel:true,
-      annotations: DATA.annotations,
+      annotations: this.data ? this.data.annotations : null,
       annotationVisible:{},
       selected:null,
       time: 0,
       start: 0,
       isMobile: isMobile
     }
-    this.svgs = this.preloadSVG()
+    this.svgs = this.data ? this.preloadSVG() : null
     this.callback = this.callback.bind(this)
     this.startTimer = this.startTimer.bind(this)
     this.stopTimer = this.stopTimer.bind(this)
@@ -109,14 +109,15 @@ class App extends Component {
   }
   
   render() {
-    return (
-      <div className={this.state.gallery ? "App gallery" : "App"}>
-        <Grid />
+    let content = (this.data) ? [
+        <Grid key="Grid"/>,
         <Nav 
+          key="Nav"
           callback={this.callback} 
           data={this.data.nav}
-        />
+        />,
         <Mission 
+          key="Mission"
           isMobile={this.isMobile}
           callback={this.callback} 
           data={this.data.mission} 
@@ -124,17 +125,24 @@ class App extends Component {
           selected={this.state.selected}
           currentArtist={this.state.currentArtist}
           annotations={this.state.annotations}
-        />  
+        />,  
         <SVG
+          key="SVG"
           callback={this.callback} 
           data={this.svgs[this.state.currentArtist]} 
           caption={(this.state.currentArtist) ? this.data.images[this.state.currentArtist].caption : null}
           gallery={this.state.gallery}
-        />
+        />,
         <Annotation 
+          key="Annotation"
           callback={this.callback} 
           data={this.state.annotations} 
         />
+        ] : null
+    
+    return (
+      <div className={this.state.gallery ? "App gallery" : "App"}>
+        {content}
       </div>
     );
   }
