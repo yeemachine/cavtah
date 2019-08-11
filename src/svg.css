@@ -174,7 +174,7 @@ path,polygon,polyline,rect,ellipse{
 @media only screen and (max-width: 800px) {
   div svg image{
   opacity:1;
-  animation: none
+  animation: none;
   }
   .svgContainer{
     pointer-events:all;
@@ -202,6 +202,7 @@ path,polygon,polyline,rect,ellipse{
   height:100px;
   overflow:hidden;
   border-radius:50%;
+  background:var(--bg-color)
   }
   .svgContainer.gallery div{
   border-radius:0;

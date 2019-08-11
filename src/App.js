@@ -128,8 +128,11 @@ class App extends Component {
         />,  
         <SVG
           key="SVG"
+          isMobile={this.isMobile}
           callback={this.callback} 
+          carousel={this.state.carousel}
           data={this.svgs[this.state.currentArtist]} 
+          currentArtist={this.state.currentArtist}
           caption={(this.state.currentArtist) ? this.data.images[this.state.currentArtist].caption : null}
           gallery={this.state.gallery}
         />,
