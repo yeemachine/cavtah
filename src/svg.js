@@ -11,9 +11,8 @@ class SVG extends Component {
   }
   click(){
     let stateObj = {
-        carousel:true,
+        carousel:!this.props.carousel,
         gallery:!this.props.gallery,
-        selected:null,
         time:0
       }
     this.props.callback(stateObj)
