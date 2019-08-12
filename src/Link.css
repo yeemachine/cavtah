@@ -4,6 +4,7 @@
   font-size:.85em;
   display: inline-block;
   position: relative;
+  cursor:pointer;
 }
 
 .Link:hover{
