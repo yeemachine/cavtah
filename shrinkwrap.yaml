@@ -10843,8 +10843,8 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   firebase: ^6.1.0
-  react: ^16.8.6
+  react: ^16.9.0
   react-device-detect: ^1.7.5
-  react-dom: ^16.8.6
-  react-scripts: ^3.0.1
+  react-dom: ^16.9.0
+  react-scripts: ^3.1.0
   react-visibility-sensor: ^5.1.1

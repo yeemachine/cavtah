@@ -53,7 +53,8 @@ class Link extends Component {
         className={classes.join(' ')} 
         onMouseEnter={(!this.props.isMobile) ? this.mouseEnter : null} 
         onMouseLeave={(!this.props.isMobile) ? this.mouseLeave : null} 
-        onClick={this.click} 
+        onClick={(!this.props.isMobile) ? this.click : null} 
+        onTouchStart={(this.props.isMobile) ? this.click : null}
         data-text={this.props.text}
       >
         {this.props.text}
