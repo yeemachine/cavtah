@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Artist.css';
+import './Link.css';
 
-class Artist extends Component {
+class Link extends Component {
   constructor(){
     super()
     this.state = {}
@@ -10,19 +10,19 @@ class Artist extends Component {
     this.click = this.click.bind(this)
   }
   mouseEnter(){
-    let artistKey = this.props.name.replace(/ /g,"_").toLowerCase()
-    let stateObj = (this.props.currentArtist === artistKey) ? {
+    let linkKey = this.props.text.replace(/ /g,"_").toLowerCase()
+    let stateObj = (this.props.currentLink === linkKey) ? {
         carousel:false,
-        currentArtist:artistKey,
+        currentLink:linkKey,
       } : {
         carousel:false,
-        currentArtist:artistKey,
+        currentLink:linkKey,
         time:0
       }
     this.props.callback(stateObj)
   }
   mouseLeave(){
-    if(this.props.selected !== this.props.name){
+    if(this.props.selected !== this.props.text){
       let stateObj = {
         carousel:true
       }
@@ -30,23 +30,23 @@ class Artist extends Component {
     }
   }
   click(){
-    let artistKey = this.props.name.replace(/ /g,"_").toLowerCase()
+    let linkKey = this.props.text.replace(/ /g,"_").toLowerCase()
     let stateObj = {
         gallery:true,
-        selected:this.props.name,
-        currentArtist:artistKey,
+        selected:this.props.text,
+        currentLink:linkKey,
     }
     this.props.callback(stateObj)
   }
   componentDidMount(){
   }
   render() {
-    let classes = ['Artist']
-    if(this.props.selected === this.props.name){
+    let classes = ['Link']
+    if(this.props.selected === this.props.text){
       classes.push('selected')
     }
-    if(this.props.currentArtist === this.props.name.replace(/ /g,"_").toLowerCase()){
-      classes.push('currentArtist')
+    if(this.props.currentLink === this.props.text.replace(/ /g,"_").toLowerCase()){
+      classes.push('currentLink')
     }
     return (
       <span 
@@ -54,12 +54,12 @@ class Artist extends Component {
         onMouseEnter={(!this.props.isMobile) ? this.mouseEnter : null} 
         onMouseLeave={(!this.props.isMobile) ? this.mouseLeave : null} 
         onClick={this.click} 
-        data-text={this.props.name}
+        data-text={this.props.text}
       >
-        {this.props.name}
+        {this.props.text}
       </span>
     );
   }
 }
 
-export default Artist;
+export default Link;

@@ -1,4 +1,4 @@
-.Artist{
+.Link{
   font-family:'America Mono';
   font-weight:bold;
   font-size:.85em;
@@ -6,11 +6,11 @@
   position: relative;
 }
 
-.Artist:hover{
+.Link:hover{
   cursor:pointer;
   color:var(--accent-red);
 }
-.Artist:after{
+.Link:after{
    content: '';
     display: block;
     position: absolute;
@@ -25,10 +25,10 @@
     transition:transform .5s;
 }
 
-.Artist:hover:before,.Mission .Artist.selected:hover:before{
+.Link:hover:before,.Mission .Link.selected:hover:before{
 }
 
-.Artist:before{
+.Link:before{
    content: '';
     display: block;
     position: absolute;
@@ -38,22 +38,22 @@
     background: white;
     z-index:-1
 }
-.gallery .Artist:before{
+.gallery .Link:before{
   opacity:0.1
 }
 
-.Artist.currentArtist:after{
+.Link.currentLink:after{
   transform:scale(1, 1);
   transition:transform 4s linear;
 }
 
-.gallery .Artist.selected{
+.gallery .Link.selected{
   color:var(--accent-red);
 }
-.gallery .Artist.selected:after{
+.gallery .Link.selected:after{
   transform:scale(0, 1);
 }
-.gallery .Artist:before{
+.gallery .Link:before{
   opacity:0.05
 }
 

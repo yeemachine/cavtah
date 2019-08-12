@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Mission.css';
-import Artist from './Artist.js';
+import Link from './Link.js';
 import Footnote from './Footnote.js';
 import Header3 from './Header3.js';
 
@@ -20,6 +20,7 @@ class Mission extends Component {
   }
   processData(){
     let processedArray = []
+    this.linkOrder = []
     let uniqueKey = 0
     this.props.data.forEach((e,i)=>{
       let filteredArray = e.split(/\{\{|\}\}/g); 
@@ -27,15 +28,16 @@ class Mission extends Component {
       filteredArray.forEach((f,j)=>{
         let child
         if(f.substring(0,2) === 'A:'){
-          let artistName = f.substring(2)
-          child = <Artist 
+          let linkName = f.substring(2)
+          child = <Link 
                     key={'A'+uniqueKey} 
-                    name={artistName} 
+                    text={linkName} 
                     isMobile={this.props.isMobile}
                     callback={this.callback} 
-                    currentArtist= {this.props.currentArtist}
+                    currentLink= {this.props.currentLink}
                     selected={this.props.selected}
                   />
+          this.linkOrder.push(linkName.replace(/ /g,"_").toLowerCase())
         }else if(f.substring(0,2) === 'F:'){
           child = <Footnote 
                     key={'F'+uniqueKey} 
@@ -67,7 +69,10 @@ class Mission extends Component {
     // this.setState({content:processedArray})
   }
   componentDidMount(){
-    // this.processData()
+    this.callback({
+      linkOrder:this.linkOrder,
+      currentLink:this.linkOrder[0]
+    })
   }
   render(){
     return (

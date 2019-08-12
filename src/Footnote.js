@@ -14,7 +14,6 @@ class Footnote extends Component {
     let stateObj = this.props.annotations
     stateObj["f"+this.props.number].isVisible = isVisible
     this.setState(stateObj,()=>{
-      this.props.callback(stateObj)
     })
   }
   render() {
