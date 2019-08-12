@@ -48,7 +48,7 @@ class App extends Component {
   
   callback(stateObj){
     this.setState(stateObj,()=>{
-      // console.log(this.state)
+      console.log(this.state)
     })
   }
   
@@ -115,7 +115,7 @@ class App extends Component {
         />,
         <Mission 
           key="Mission"
-          isMobile={this.isMobile}
+          isMobile={this.state.isMobile}
           callback={this.callback} 
           data={this.state.firebase.mission} 
           gallery={this.state.gallery}
@@ -125,7 +125,7 @@ class App extends Component {
         />,  
         <SVG
           key="SVG"
-          isMobile={this.isMobile}
+          isMobile={this.state.isMobile}
           callback={this.callback} 
           carousel={this.state.carousel}
           data={this.svgs[this.state.currentLink]} 

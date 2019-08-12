@@ -108,45 +108,27 @@ path,polygon,polyline,rect,ellipse{
   stroke:var(--accent-red) !important;
   stroke-dasharray:4200;
   stroke-dashoffset:4200;
-
+  opacity:1;
 }
 .gallery path,.gallery polygon,.gallery polyline,.gallery rect,.gallery ellipse{
-/*   animation: draw2 2s cubic-bezier(.42,0,1,1);
-  animation-fill-mode:forwards */
-  stroke-dashoffset:0;
-  opacity:0;
-  transition: 
-    stroke-dashoffset 2s cubic-bezier(.42,0,1,1) 0s,
-    opacity 0.5s linear 2.4s;
+  animation: draw 4s cubic-bezier(.42,0,1,1) 0s;
+  animation-fill-mode:forwards;
+  transition: opacity 0.5s linear 2.4s;
 }
 
-
-@keyframes draw {
-  0% { 
-    stroke-dashoffset:1000;
-    opacity:1;
-  }
-  100% { 
-    stroke-dashoffset:0;
-    opacity:0;
-  }
-}
-
-@keyframes draw2 {
-  0% { 
-    stroke-dashoffset:1000;
-    opacity:1;
+@keyframes draw{
+  0%{
+    stroke-dashoffset:4200
   }
   80%{
     stroke-dashoffset:0;
-    opacity:1;
+    opacity:1
   }
-  100% { 
+  100%{
     stroke-dashoffset:0;
     opacity:0;
   }
 }
-
 @keyframes appear {
   0% { 
     opacity:0
@@ -182,10 +164,6 @@ path,polygon,polyline,rect,ellipse{
   .svgContainer{
     pointer-events:all;
   }
-/*   .svgContainer.gallery div svg image,  .svgContainer.gallery div img{
-  opacity:1;
-  animation: none
-  } */
   
   .svgContainer{
     width:100px;

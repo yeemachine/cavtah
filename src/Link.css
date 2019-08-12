@@ -4,7 +4,6 @@
   font-size:.85em;
   display: inline-block;
   position: relative;
-  cursor:pointer;
 }
 
 .Link:hover{
@@ -65,4 +64,8 @@
   100% { 
     width:100%;
   }
+}
+
+@media only screen and (max-width: 800px) {
+
 }
