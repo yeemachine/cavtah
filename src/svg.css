@@ -68,7 +68,7 @@
   animation-fill-mode:forwards;
 }
 
-.svgContainer div svg{
+.svgContainer div svg,.svgContainer div img{
   width:100%;
   height:auto;
 /*   min-height:100%; */
@@ -84,19 +84,22 @@
   opacity:1; 
   transition: opacity .25s .25s;
 }
-.svgContainer.gallery div svg{
+.svgContainer.gallery div svg,.svgContainer.gallery div img{
   height:100%;
   width:auto;
   min-width:auto;
   transition: all .25s
 }
-.svgContainer.gallery div svg image{
+.svgContainer.gallery div svg image,.svgContainer.gallery div img{
   opacity:0;
   animation: appear2 1.5s cubic-bezier(.42,0,1,1) 0s;
   animation-fill-mode:forwards;
 }
+.svgContainer.gallery div svg image{
+  animation-delay:2s;
+}
 
-svg image{
+svg image, img{
   opacity:0;
   animation: appear .5s cubic-bezier(.42,0,1,1);
   animation-fill-mode:forwards;
@@ -172,17 +175,17 @@ path,polygon,polyline,rect,ellipse{
 }
 
 @media only screen and (max-width: 800px) {
-  div svg image{
+  div svg image, div img{
   opacity:1;
   animation: none;
   }
   .svgContainer{
     pointer-events:all;
   }
-  .svgContainer.gallery div svg image{
+/*   .svgContainer.gallery div svg image,  .svgContainer.gallery div img{
   opacity:1;
   animation: none
-  }
+  } */
   
   .svgContainer{
     width:100px;
@@ -208,7 +211,7 @@ path,polygon,polyline,rect,ellipse{
   border-radius:0;
   height:auto;
   }
-  .svgContainer.gallery div svg{
+  .svgContainer.gallery div svg, .svgContainer.gallery div img{
     width:100%;
     height:auto;
   }
