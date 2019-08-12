@@ -32,11 +32,14 @@ class Link extends Component {
   click(){
     let linkKey = this.props.text.replace(/ /g,"_").toLowerCase()
     let stateObj = {
+        carousel:false,
         gallery:true,
         selected:this.props.text,
         currentLink:linkKey,
+        time:0
     }
     this.props.callback(stateObj)
+    // alert(this.props.selected,this.props.text)
   }
   componentDidMount(){
   }
@@ -54,7 +57,7 @@ class Link extends Component {
         onMouseEnter={(!this.props.isMobile) ? this.mouseEnter : null} 
         onMouseLeave={(!this.props.isMobile) ? this.mouseLeave : null} 
         onClick={(!this.props.isMobile) ? this.click : null} 
-        onTouchStart={(this.props.isMobile) ? this.click : null}
+        onTouchEnd={(this.props.isMobile) ? this.click : null}
         data-text={this.props.text}
       >
         {this.props.text}
