@@ -34,8 +34,8 @@ class App extends Component {
   }
   
   getFirebaseData(){
-    let ref = Firebase.database().ref('/phase1');
-    ref.once('value', snapshot => {
+    let ref = Firebase.database().ref('/phase1_5');
+    ref.on('value', snapshot => {
       const state = snapshot.val();
       this.setState({
         firebase:state
@@ -48,7 +48,7 @@ class App extends Component {
   
   callback(stateObj){
     this.setState(stateObj,()=>{
-      console.log(this.state)
+      //console.log(this.state)
     })
   }
   
@@ -58,6 +58,7 @@ class App extends Component {
         time: this.state.time + .00385
       })   
     }else{
+
       if(this.state.carousel && this.state.linkOrder){
         let linkNames = this.state.linkOrder
         let currentID = linkNames.indexOf(this.state.currentLink)
@@ -74,6 +75,7 @@ class App extends Component {
 
   preloadSVG(){
     let xhrObj = {}
+    
     for (const [key, value] of Object.entries(this.state.firebase.images)) {
       if(value.url.includes("svg")){
         let xhr = new XMLHttpRequest();
@@ -130,7 +132,7 @@ class App extends Component {
           carousel={this.state.carousel}
           data={this.svgs[this.state.currentLink]} 
           currentLink={this.state.currentLink}
-          caption={(this.state.currentLink) ? this.state.firebase.images[this.state.currentLink].caption : null}
+          caption={(this.state.currentLink) ? this.state.firebase.images[this.state.currentLink].caption : ''}
           gallery={this.state.gallery}
         />,
         <Annotation 
