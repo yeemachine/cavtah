@@ -27,7 +27,7 @@ class Mission extends Component {
       let children = []
       filteredArray.forEach((f,j)=>{
         let child
-        if(f.substring(0,2) === 'A:'){
+        if(f.substring(0,1) === 'A'){
           let linkName = f.substring(2)
           child = <Link 
                     key={'A'+uniqueKey} 
@@ -38,19 +38,19 @@ class Mission extends Component {
                     selected={this.props.selected}
                   />
           this.linkOrder.push(linkName.replace(/ /g,"_").toLowerCase())
-        }else if(f.substring(0,2) === 'F:'){
+        }else if(f.substring(0,1) === 'F'){
           child = <Footnote 
                     key={'F'+uniqueKey} 
                     number={f.substring(2)} 
                     callback={this.callback}
                     annotations={this.props.annotations}
                   />
-        }else if(f.substring(0,2) === 'I:'){
+        }else if(f.substring(0,1) === 'I'){
           child = <i key={'I'+uniqueKey}>{f.substring(2)}</i>
         }
-        else if(f.substring(0,2) === 'B:'){
+        else if(f.substring(0,1) === 'B'){
           child = <b key={'B'+uniqueKey}>{f.substring(2)}</b>
-        }else if(f.substring(0,2) === 'H:'){
+        }else if(f.substring(0,1) === 'H'){
           child = <Header3 
                     key={'H'+uniqueKey} 
                     text={f.substring(2)} 
