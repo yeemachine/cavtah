@@ -35,7 +35,7 @@ class App extends Component {
   
   getFirebaseData(){
     let ref = Firebase.database().ref('/phase1_5');
-    ref.on('value', snapshot => {
+    ref.once('value', snapshot => {
       const state = snapshot.val();
       this.setState({
         firebase:state
